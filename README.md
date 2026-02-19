@@ -1,123 +1,53 @@
-# Grok AI Telegram Bot Docs Site
+<p align="center">
+  <img src="assets/brand/cyberfrog-logo-latest.jpg" alt="Cyberfrog Grok Telegram Bot" width="180" />
+</p>
 
-Production-ready static docs/marketing website for a community Grok bot in Telegram.
+<h1 align="center">Grok AI Telegram Bot</h1>
+<p align="center"><b>Рабочий Grok-бот в Telegram: быстро, удобно, с бесплатной дневной квотой.</b></p>
 
-Live site:
-- `https://cy-frog.github.io/grok-ai-telegram-bot/`
-- Russian version: `https://cy-frog.github.io/grok-ai-telegram-bot/ru/`
+<p align="center">
+  <a href="https://t.me/grok_ai_telegram_bot">
+    <img alt="Open Bot" src="https://img.shields.io/badge/Open%20Bot%20in%20Telegram-27D89A?style=for-the-badge&logo=telegram&logoColor=white" />
+  </a>
+  <a href="https://t.me/cyber_frog_ai">
+    <img alt="Join Channel" src="https://img.shields.io/badge/Join%20Channel-0FBF74?style=for-the-badge&logo=telegram&logoColor=white" />
+  </a>
+  <a href="https://cy-frog.github.io/grok-ai-telegram-bot/">
+    <img alt="Open Website" src="https://img.shields.io/badge/Open%20Website-0B3A28?style=for-the-badge&logo=googlechrome&logoColor=white" />
+  </a>
+</p>
 
-Primary bot link:
-- `https://t.me/grok_ai_telegram_bot`
+## Быстрый старт
+1. Открой бота: `https://t.me/grok_ai_telegram_bot`
+2. Отправь `/start`
+3. Подпишись на канал для бесплатной квоты
+4. Используй `/menu`, выбери режим и язык
 
-Channel link:
-- `https://t.me/cyber_frog_ai`
+## Почему этот бот
+- Ответы в треде к вашему сообщению
+- Индикатор набора во время генерации
+- Короткая память контекста (2 последних сообщения)
+- Режимы: `Quick`, `Smart`, `Internet`, `Images`
+- 11 языков интерфейса
+- Бесплатные запросы + пополнение через Telegram Stars
 
-## What This Project Is
-This repository contains a fully static multi-page website focused on:
-- Product onboarding (`Start Here`)
-- Trust pages (`Status`, `Pricing`, `Privacy`, `FAQ`, `Changelog`)
-- Editorial long-form article (`musk-durov-grok-telegram.html`)
-- Visual product proof via real screenshots (`assets/evidence/`)
-- EN/RU localization with dedicated page paths
+## Навигация
+- Бот: `https://t.me/grok_ai_telegram_bot`
+- Канал: `https://t.me/cyber_frog_ai`
+- Сайт (EN): `https://cy-frog.github.io/grok-ai-telegram-bot/`
+- Сайт (RU): `https://cy-frog.github.io/grok-ai-telegram-bot/ru/`
+- Статус: `https://cy-frog.github.io/grok-ai-telegram-bot/status.html`
+- Цены: `https://cy-frog.github.io/grok-ai-telegram-bot/pricing.html`
 
-No framework, no build step, no backend. Plain HTML + CSS + small inline JS for carousel behavior.
+## Что внутри репозитория
+Статический multi-page сайт (EN + RU) с:
+- лендингом и CTA
+- страницами доверия (`Status`, `Pricing`, `Privacy`, `FAQ`, `Changelog`)
+- скриншотами продукта и доказательствами
+- SEO-структурой (`canonical`, `hreflang`, `sitemap`, `robots`)
 
-## Key Features
-- Neon-themed responsive UI optimized for mobile and desktop
-- Fixed CTA to open the Telegram bot
-- Product-proof screenshot carousel on homepage
-- Structured trust content (pricing/status/privacy/changelog)
-- SEO-ready setup:
-  - canonical + hreflang
-  - page-level meta descriptions
-  - `robots.txt`
-  - `sitemap.xml`
-  - `site.webmanifest`
-  - JSON-LD where relevant
+---
 
-## Project Structure
-```txt
-.
-├── index.html
-├── how-it-works.html
-├── status.html
-├── pricing.html
-├── privacy.html
-├── faq.html
-├── changelog.html
-├── musk-durov-grok-telegram.html
-├── ru/
-│   ├── index.html
-│   ├── how-it-works.html
-│   ├── status.html
-│   ├── pricing.html
-│   ├── privacy.html
-│   ├── faq.html
-│   ├── changelog.html
-│   └── musk-durov-grok-telegram.html
-├── assets/
-│   ├── styles.css
-│   ├── brand/        # logos + favicons + app icons
-│   ├── evidence/     # product screenshots
-│   └── article/      # article evidence assets
-├── robots.txt
-├── sitemap.xml
-└── site.webmanifest
-```
-
-## Local Development
-Use any static server from repo root.
-
-Example (Python):
-```bash
-python -m http.server 8080
-```
-
-Then open:
-- `http://localhost:8080/`
-- `http://localhost:8080/ru/`
-
-## Content Rules
-- Keep EN and RU page parity (same page set and navigation depth).
-- Update both language versions for structural changes.
-- Keep links absolute where required for SEO metadata, relative for internal navigation.
-- Do not use placeholder screenshots in `assets/evidence/` or `assets/article/`.
-
-## Brand/Favicon Pipeline
-Brand icons are generated from the latest `assets/brand/cyberfrog-logo-latest.*`.
-Current generated targets:
-- `favicon-16x16.png`
-- `favicon-32x32.png`
-- `apple-touch-icon.png`
-- `android-chrome-192x192.png`
-- `android-chrome-512x512.png`
-
-When logo changes, regenerate all icon assets before release.
-
-## SEO & Indexing Checklist
-Before publish:
-1. Verify unique `<title>` and `<meta name="description">` per page.
-2. Verify canonical URL per page (EN/RU correct).
-3. Verify `hreflang` cross-links on both language versions.
-4. Update `sitemap.xml` if new pages are added.
-5. Confirm `robots.txt` allows target pages.
-6. Check no accidental English-only content remains in `ru/`.
-
-## Deployment
-Designed for GitHub Pages static hosting.
-
-Recommended flow:
-1. Commit changes to main branch.
-2. Publish via GitHub Pages.
-3. Smoke-test:
-   - Home EN/RU
-   - CTA links
-   - Favicons
-   - Mobile nav readability
-   - Carousel controls
-
-## Roadmap Ideas
-- Add Lighthouse CI checks
-- Add automated HTML link checker
-- Add screenshot diff regression checks for critical pages
-- Add structured data for article pages in RU version
+<p align="center">
+  <a href="https://t.me/grok_ai_telegram_bot"><b>Открыть бота в Telegram</b></a>
+</p>
