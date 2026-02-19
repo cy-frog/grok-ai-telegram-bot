@@ -1,14 +1,11 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grok Telegram Bot Privacy | Data Handling</title>
-    <meta
-      name="description"
-      content="Privacy details for Grok Telegram bot: what is stored, what is not stored, retention and security practices."
-    />
-    <link rel="canonical" href="https://cy-frog.github.io/grok-ai-telegram-bot/privacy.html" />
+    <title>Приватность Grok Telegram Bot | Обработка данных</title>
+    <meta name="description" content="Как в Grok Telegram bot обрабатываются данные: что хранится, что не хранится, срок хранения и меры безопасности." />
+    <link rel="canonical" href="https://cy-frog.github.io/grok-ai-telegram-bot/ru/privacy.html" />
     <link rel="alternate" hreflang="en" href="https://cy-frog.github.io/grok-ai-telegram-bot/privacy.html" />
     <link rel="alternate" hreflang="ru" href="https://cy-frog.github.io/grok-ai-telegram-bot/ru/privacy.html" />
     <link rel="alternate" hreflang="x-default" href="https://cy-frog.github.io/grok-ai-telegram-bot/" />
@@ -22,70 +19,58 @@
   <body>
     <main class="container">
       <nav class="topbar">
-        <a href="./">Start Here</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="status.html">Status</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="privacy.html">Privacy</a>
+        <a href="./">Старт</a>
+        <a href="how-it-works.html">Как это работает</a>
+        <a href="status.html">Статус</a>
+        <a href="pricing.html">Цены</a>
+        <a href="privacy.html">Приватность</a>
         <a href="faq.html">FAQ</a>
-        <a href="changelog.html">Changelog</a>
-        <a href="musk-durov-grok-telegram.html">Article</a>
-        <a href="../">EN</a>
-              <a class="topbar-cta" href="https://t.me/cyber_frog_ai" target="_blank" rel="noopener noreferrer">Join Channel</a>
+        <a href="changelog.html">Обновления</a>
+        <a href="musk-durov-grok-telegram.html">Статья</a>
+        <a href="../privacy.html">EN</a>
+        <a class="topbar-cta" href="https://t.me/cyber_frog_ai" target="_blank" rel="noopener noreferrer">Канал</a>
       </nav>
 
-      <h1>Privacy and Data Handling</h1>
-      <p>
-        This page explains what data is processed to run the service and what data is not retained as long-term history.
-      </p>
+      <h1>Приватность и обработка данных</h1>
+      <p>На этой странице описано, какие данные обрабатываются для работы сервиса и какие данные не сохраняются как долгосрочная история.</p>
 
       <section class="card">
-        <h2>What is stored</h2>
+        <h2>Что хранится</h2>
         <ul>
-          <li>Telegram user ID (or equivalent account key) for quota and billing.</li>
-          <li>Balance, subscription state, and payment-related status.</li>
-          <li>Operational events needed for service reliability and abuse prevention.</li>
+          <li>Telegram user ID (или эквивалентный ключ аккаунта) для квоты и биллинга.</li>
+          <li>Баланс, статус подписки и платежные статусы.</li>
+          <li>Операционные события, необходимые для надежности сервиса и антиабуза.</li>
         </ul>
       </section>
 
       <section class="card">
-        <h2>What is not stored long-term</h2>
+        <h2>Что не хранится долгосрочно</h2>
         <ul>
-          <li>No long-term database of complete user message history.</li>
-          <li>No long-term database of complete model responses.</li>
-          <li>No persistent full transcript storage for regular usage.</li>
+          <li>Нет долгосрочной базы полной истории пользовательских сообщений.</li>
+          <li>Нет долгосрочной базы полных ответов модели.</li>
+          <li>Нет постоянного хранения полных транскриптов при обычном использовании.</li>
         </ul>
       </section>
 
       <section class="card">
-        <h2>Retention and short context</h2>
+        <h2>Срок хранения и короткий контекст</h2>
         <ul>
-          <li>Short context from only the last 2 chat messages can be held temporarily to generate coherent replies.</li>
-          <li>This temporary context is not intended as permanent chat history.</li>
-          <li>Using New Chat resets active context for the conversation.</li>
-          <li>If session continuity expires, users may need to resend key context.</li>
+          <li>Краткий контекст из последних 2 сообщений может временно удерживаться для связных ответов.</li>
+          <li>Этот временный контекст не является постоянной историей чата.</li>
+          <li>Использование New Chat сбрасывает активный контекст диалога.</li>
+          <li>Если непрерывность сессии прервалась, пользователю может понадобиться повторить ключевой контекст.</li>
         </ul>
       </section>
 
       <section class="card">
-        <h2>Processors and security</h2>
+        <h2>Процессоры и безопасность</h2>
         <ul>
-          <li>Requests are routed through the bot backend to Grok API infrastructure.</li>
-          <li>Access to operational systems is restricted to maintainers.</li>
-          <li>Where possible, diagnostic logs should avoid storing full message content.</li>
+          <li>Запросы проходят через backend бота к инфраструктуре Grok API.</li>
+          <li>Доступ к операционным системам ограничен кругом сопровождающих.</li>
+          <li>Где возможно, диагностические логи не должны хранить полный текст сообщений.</li>
         </ul>
       </section>
     </main>
-      <a class="mobile-subscribe-cta" href="https://t.me/grok_ai_telegram_bot" target="_blank" rel="noopener noreferrer">Open Bot in Telegram</a>
+    <a class="mobile-subscribe-cta" href="https://t.me/grok_ai_telegram_bot" target="_blank" rel="noopener noreferrer">Открыть бота в Telegram</a>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-

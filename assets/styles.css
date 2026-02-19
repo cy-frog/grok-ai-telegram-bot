@@ -227,10 +227,14 @@ h1 {
 
 .btn-telegram {
   border-color: rgba(140, 255, 206, 0.95);
-  background: linear-gradient(180deg, #86ffd0, #28d98f);
-  color: #032418;
+  background: linear-gradient(180deg, #9bffd9, #3be39f);
+  color: #032016;
   font-weight: 700;
-  box-shadow: 0 0 0 1px rgba(157, 255, 215, 0.45), 0 14px 34px rgba(17, 228, 134, 0.32);
+  text-shadow: 0 1px 0 rgba(221, 255, 241, 0.45);
+  box-shadow:
+    inset 0 0 0 1px rgba(10, 92, 59, 0.28),
+    0 0 0 1px rgba(157, 255, 215, 0.45),
+    0 14px 34px rgba(17, 228, 134, 0.32);
   animation: cta-pulse 2.1s ease-in-out infinite;
 }
 
@@ -552,6 +556,42 @@ th {
 
 .mobile-subscribe-cta {
   display: none;
+}
+
+@media (min-width: 641px) {
+  .mobile-subscribe-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 60;
+    text-decoration: none;
+    border-radius: 999px;
+    border: 1px solid rgba(197, 255, 229, 0.86);
+    background: linear-gradient(180deg, #9bffd8, #2de198);
+    color: #032418;
+    font-family: "Orbitron", "Chakra Petch", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
+    padding: 11px 16px;
+    box-shadow: 0 0 0 1px rgba(173, 255, 221, 0.58), 0 12px 28px rgba(26, 225, 136, 0.33);
+    transition: transform 120ms ease, box-shadow 120ms ease;
+  }
+
+  .mobile-subscribe-cta:hover {
+    text-decoration: none;
+    color: #032418;
+    transform: translateY(-1px);
+    box-shadow: 0 0 0 1px rgba(216, 255, 238, 0.8), 0 16px 34px rgba(26, 225, 136, 0.42);
+  }
+
+  .mobile-subscribe-cta:visited {
+    color: #032418;
+  }
 }
 
 .proof-carousel {
