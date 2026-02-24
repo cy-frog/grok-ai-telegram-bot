@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/brand/cyberfrog-logo-latest.jpg" alt="Cyberfrog Grok Telegram Bot" width="180" />
+</p>
+
 # Grok Telegram Bot by Cyberfrog
 
 Use Grok in Telegram with a fast, practical workflow: clear modes, transparent pricing, and real product documentation.
@@ -95,4 +99,3 @@ It is not an official Telegram/xAI support page.
 
 Это независимый community-проект Cyberfrog.  
 Это не официальная страница поддержки Telegram/xAI.
-
