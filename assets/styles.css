@@ -859,6 +859,23 @@ pre {
   font-size: 0.95rem;
 }
 
+.footer-note {
+  margin: 12px 0 0;
+  max-width: 78ch;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: rgba(175, 213, 192, 0.72);
+}
+
+.footer-keywords {
+  margin: 6px 0 0;
+  max-width: 78ch;
+  font-size: 0.74rem;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  color: rgba(153, 197, 174, 0.58);
+}
+
 .hero,
 .hero-cta,
 .section-head,
