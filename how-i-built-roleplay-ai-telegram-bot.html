@@ -1,0 +1,291 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How I Built a Telegram Roleplay AI Bot: LLM Choice, Censorship, and Why Grok Won</title>
+    <meta
+      name="description"
+      content="A practical story of building a Telegram roleplay AI bot: model selection, censorship constraints, open-source LLM hosting limits, quantization tradeoffs, and why Grok API became the final solution."
+    />
+    <meta
+      property="og:title"
+      content="How I Built a Telegram Roleplay AI Bot: LLM Choice, Censorship, and Why Grok Won"
+    />
+    <meta
+      property="og:description"
+      content="From a simple chat experiment to a full Telegram AI bot: what failed with ChatGPT and open-source models, and why the final production setup was built on Grok."
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://cy-frog.github.io/grok-ai-telegram-bot/how-i-built-roleplay-ai-telegram-bot.html"
+    />
+    <meta
+      property="og:image"
+      content="https://cy-frog.github.io/grok-ai-telegram-bot/assets/article%202/image3.webp"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="How I Built a Telegram Roleplay AI Bot: LLM Choice, Censorship, and Why Grok Won"
+    />
+    <meta
+      name="twitter:description"
+      content="A practical breakdown of building a Telegram roleplay AI bot: model quality, censorship, open-source hosting limits, quantization, and the final move to Grok API."
+    />
+    <meta
+      name="twitter:image"
+      content="https://cy-frog.github.io/grok-ai-telegram-bot/assets/article%202/image3.webp"
+    />
+    <meta
+      name="robots"
+      content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
+    />
+    <link
+      rel="canonical"
+      href="https://cy-frog.github.io/grok-ai-telegram-bot/how-i-built-roleplay-ai-telegram-bot.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://cy-frog.github.io/grok-ai-telegram-bot/how-i-built-roleplay-ai-telegram-bot.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="ru"
+      href="https://cy-frog.github.io/grok-ai-telegram-bot/ru/how-i-built-roleplay-ai-telegram-bot.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://cy-frog.github.io/grok-ai-telegram-bot/how-i-built-roleplay-ai-telegram-bot.html"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/brand/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/brand/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/brand/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#0b0b0b" />
+  </head>
+  <body class="long-read">
+    <main class="container">
+      <nav class="topbar">
+        <a href="./">Start</a>
+        <details class="topbar-dropdown">
+          <summary>Articles</summary>
+          <div class="topbar-dropdown-menu">
+            <a href="musk-durov-grok-telegram.html">Why Telegram Grok Bot Failed</a>
+            <a href="how-i-built-roleplay-ai-telegram-bot.html">Building a Roleplay AI Bot</a>
+          </div>
+        </details>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="status.html">Status</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="faq.html">FAQ</a>
+        <a href="changelog.html">Changelog</a>
+        <a href="ru/how-i-built-roleplay-ai-telegram-bot.html">RU</a>
+        <a
+          class="topbar-cta"
+          href="https://t.me/cyber_frog_ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Channel</a
+        >
+        <a
+          class="topbar-bot-cta"
+          href="https://t.me/grok_ai_telegram_bot"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Bot</a
+        >
+      </nav>
+
+      <h1>How I Built a Telegram Roleplay AI Bot: From Idea to Working Release</h1>
+      <p class="page-subtitle">
+        A real-world build story: picking the right LLM, fighting censorship limits,
+        hitting infrastructure walls with open-source models, and finally shipping
+        on Grok API.
+      </p>
+
+      <section class="card story-card">
+        <h2>A "small" idea that quickly got bigger</h2>
+        <p>
+          About four months ago I had a simple idea: build a lightweight Telegram
+          AI bot, give it a specific personality (historical figure, opinionated
+          political character, or fictional role), add it to a private group chat,
+          and let it generate lively interactions with people.
+        </p>
+        <p>
+          Easy plan, right? Not exactly. The experiment expanded far beyond the
+          original scope and took much longer than expected.
+        </p>
+      </section>
+
+      <section class="card story-card">
+        <h2>The concept: hard requirements for the model</h2>
+        <p>
+          Model choice was the first and most important step. I rejected both
+          fine-tuning existing models and training my own LLM from scratch — too
+          expensive in terms of time, expertise, and infrastructure. So I focused
+          on ready-to-use models where behavior could be controlled by prompt.
+        </p>
+        <p>My requirements were strict:</p>
+        <ul>
+          <li>the model had to be genuinely smart for context-aware dialogue;</li>
+          <li>it had to perform well in Russian;</li>
+          <li>
+            it had to have minimal censorship, so roleplay behavior could stay
+            expressive, including rough tone and political topics.
+          </li>
+        </ul>
+        <p>
+          Requirements one and two were manageable. Requirement three was the
+          real pain point.
+        </p>
+      </section>
+
+      <section class="card story-card">
+        <h2>ChatGPT and other mainstream models: where it broke</h2>
+        <p>
+          My first test was obviously ChatGPT. Great quality, great language
+          performance, but the strictest boundaries for role behavior in my tests.
+          Any attempt at "edgy" character play often led to refusal.
+        </p>
+        <figure class="story-media">
+          <img
+            src="assets/article%202/image%201.webp"
+            alt="Screenshot of a roleplay request and a refusal response from ChatGPT."
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>Image 1: screenshot of a ChatGPT refusal on a roleplay request.</figcaption>
+        </figure>
+        <p>
+          Gemini, Llama, Qwen, and DeepSeek were somewhat more flexible, but still
+          far from the freedom level this project needed.
+        </p>
+      </section>
+
+      <section class="card story-card">
+        <h2>Moving to uncensored open-source models</h2>
+        <p>
+          Next I moved toward uncensored model variants: fewer built-in moral
+          filters, fewer refusals, more control on the developer side. I searched
+          on Hugging Face and ended up testing
+          <code>Dolphin 2.7 Mixtral 8x7B</code> by Eric Hartford.
+        </p>
+        <p>
+          In terms of flexibility, it was close to ideal. But infrastructure became
+          the next major blocker.
+        </p>
+      </section>
+
+      <section class="card story-card">
+        <h2>Ollama helps, but hardware reality still wins</h2>
+        <p>
+          Mainstream models usually come with clean hosted APIs. Open-source models
+          are different: you either self-host or rent servers. Yes, Ollama makes
+          local deployment and API access very convenient — but large models still
+          demand serious compute.
+        </p>
+        <p>
+          With Mixtral 8x7B, the architecture and parameter scale quickly become a
+          VRAM problem in real life. Running it without heavy compromises was not
+          realistic on my machine.
+        </p>
+        <figure class="story-media">
+          <img
+            src="assets/article%202/image2.webp"
+            alt="Server screenshot showing hardware limitations for running a large open-source LLM locally."
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>Image 2: my little server was not ready for this workload.</figcaption>
+        </figure>
+      </section>
+
+      <section class="card story-card">
+        <h2>Quantization: useful, but not enough</h2>
+        <p>
+          I did test quantization. On paper it is a great tradeoff: lower memory
+          usage with acceptable quality loss. On my hardware, <code>Q4_K_M</code>
+          was the most practical option.
+        </p>
+        <p>
+          In practice, response quality dropped too much for my use case.
+          I got stuck in a classic trap: mainstream models were too restrictive,
+          while open-source models were too expensive to run at the quality I
+          needed.
+        </p>
+      </section>
+
+      <section class="card story-card">
+        <h2>A dead end, some doomscrolling, and an obvious answer</h2>
+        <p>
+          At one point I was close to dropping the project. Then, while reading
+          another "interesting" thread on X, I saw Grok again and thought: why
+          not test it properly for this exact scenario?
+        </p>
+        <figure class="story-media">
+          <img
+            src="assets/article%202/image3.webp"
+            alt="Early Grok release screenshot that became a turning point in the project."
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>Image 3: early Grok release — the point where things clicked.</figcaption>
+        </figure>
+      </section>
+
+      <section class="card story-card">
+        <h2>Why Grok became the final base</h2>
+        <ul>
+          <li>clean and stable API;</li>
+          <li>strong model quality comparable to top solutions;</li>
+          <li>
+            much softer practical limits for role behavior, which was essential
+            for this bot concept.
+          </li>
+        </ul>
+        <p>
+          The funny part: I spent a lot of time searching for a complex workaround,
+          built up a mini knowledge base on LLM internals, quantization, and tradeoffs,
+          and the production path ended up being much more straightforward.
+        </p>
+      </section>
+
+      <section class="card story-card">
+        <h2>Final result: the bot is live</h2>
+        <p>
+          If you are still reading — yes, the bot was finished. Model selection
+          alone took more than a week while working full-time, before the core bot
+          logic was even fully written.
+        </p>
+        <p>
+          Proof: <a href="https://t.me/ROLEPLAY_AI_BOT" target="_blank" rel="noopener noreferrer">@ROLEPLAY_AI_BOT</a>.
+          Enter at your own risk.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
+
+
+
+
