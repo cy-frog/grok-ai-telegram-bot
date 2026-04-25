@@ -668,6 +668,163 @@ th {
   margin: 0;
 }
 
+body.long-read .container {
+  max-width: 840px;
+  padding-bottom: 56px;
+}
+
+body.long-read {
+  color: #10261d;
+  background:
+    radial-gradient(980px 440px at 8% 0%, rgba(56, 173, 119, 0.14), transparent 60%),
+    radial-gradient(860px 420px at 96% 100%, rgba(52, 156, 111, 0.1), transparent 58%),
+    linear-gradient(180deg, #ffffff 0%, #f4faf6 52%, #edf6f0 100%);
+}
+
+body.long-read a,
+body.long-read a:visited {
+  color: #0a6a43;
+}
+
+body.long-read a:hover {
+  color: #075335;
+}
+
+body.long-read .container > h1 {
+  margin: 6px 0 10px;
+  max-width: 30ch;
+  font-size: clamp(1.8rem, 3.8vw, 2.35rem);
+  line-height: 1.28;
+  font-family: "Chakra Petch", "Segoe UI", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #0b241b;
+}
+
+body.long-read .topbar {
+  margin-bottom: 24px;
+}
+
+body.long-read .topbar a {
+  color: #154736;
+  border-color: rgba(23, 126, 83, 0.28);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+body.long-read .topbar a.topbar-cta {
+  color: #f4fff9;
+  border-color: rgba(22, 132, 86, 0.42);
+  background: linear-gradient(180deg, rgba(37, 153, 105, 0.95), rgba(27, 122, 84, 0.98));
+  box-shadow: 0 6px 14px rgba(28, 111, 78, 0.2);
+}
+
+body.long-read .topbar a.topbar-bot-cta {
+  border-color: rgba(22, 132, 86, 0.42);
+  background: linear-gradient(180deg, rgba(37, 153, 105, 0.95), rgba(27, 122, 84, 0.98));
+  color: #f4fff9;
+}
+
+body.long-read .page-subtitle {
+  margin: 0 0 26px;
+  max-width: 74ch;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: rgba(20, 52, 39, 0.92);
+}
+
+body.long-read .story-card {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+body.long-read .story-card:hover {
+  transform: none;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+body.long-read .story-card + .story-card {
+  margin-top: 26px;
+  padding-top: 24px;
+  border-top: 0;
+  position: relative;
+}
+
+body.long-read .story-card + .story-card::before {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 1px;
+  margin: 0 0 16px;
+  background: linear-gradient(90deg, rgba(18, 93, 62, 0.38), rgba(18, 93, 62, 0));
+}
+
+body.long-read .story-card h2 {
+  margin: 0 0 9px;
+  font-size: clamp(1.16rem, 2.05vw, 1.4rem);
+  line-height: 1.45;
+  font-family: "Chakra Petch", "Segoe UI", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  color: #0f2d22;
+}
+
+body.long-read .story-card p,
+body.long-read .story-card li {
+  max-width: 72ch;
+  margin: 0 0 14px;
+  font-size: 1.07rem;
+  line-height: 1.78;
+  color: #153326;
+}
+
+body.long-read .story-media {
+  width: min(92%, 720px);
+  margin: 16px auto 18px;
+  padding: 10px 10px 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(19, 99, 66, 0.18);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(244, 250, 246, 0.9));
+}
+
+body.long-read .story-media img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(24, 112, 76, 0.22);
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(16, 63, 44, 0.08);
+}
+
+body.long-read .story-media figcaption {
+  margin-top: 7px;
+  padding: 0 2px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(22, 58, 44, 0.9);
+}
+
+body.long-read .story-media-grid {
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 12px 0 10px;
+}
+
+body.long-read .story-media-grid .story-media {
+  margin: 8px auto 10px;
+}
+
+body.long-read code {
+  color: #0d4b31;
+  background: rgba(17, 116, 77, 0.14);
+  border: 1px solid rgba(18, 96, 65, 0.28);
+}
+
 .evidence-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -751,6 +908,12 @@ th {
 
 .mobile-subscribe-cta {
   display: none;
+}
+
+@media (min-width: 641px) and (max-width: 1440px) {
+  .topbar a.topbar-cta {
+    display: none;
+  }
 }
 
 @media (min-width: 641px) {
@@ -1110,6 +1273,13 @@ pre {
     backdrop-filter: blur(6px);
   }
 
+  body.long-read .topbar {
+    border-color: rgba(24, 121, 82, 0.24);
+    background: rgba(247, 253, 249, 0.92);
+    box-shadow: 0 4px 14px rgba(24, 93, 64, 0.08);
+    backdrop-filter: blur(4px);
+  }
+
   .topbar::-webkit-scrollbar {
     display: none;
   }
@@ -1126,28 +1296,7 @@ pre {
   }
 
   .topbar a.topbar-bot-cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: sticky;
-    right: 0;
-    z-index: 2;
-    margin-left: auto;
-    border: 1px solid rgba(159, 255, 219, 0.52);
-    background: linear-gradient(180deg, rgba(35, 134, 96, 0.96), rgba(23, 92, 66, 0.98));
-    color: #e8fff4;
-    font-family: "Orbitron", "Chakra Petch", sans-serif;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    box-shadow: -10px 0 14px rgba(5, 18, 14, 0.9), 0 0 0 1px rgba(116, 241, 188, 0.28);
-  }
-
-  .topbar a.topbar-bot-cta:hover,
-  .topbar a.topbar-bot-cta:visited {
-    color: #e8fff4;
-    text-decoration: none;
+    display: none;
   }
 
   .card {
