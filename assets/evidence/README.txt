@@ -1,4 +1,4 @@
-Place screenshot files in this folder with exact names:
+﻿Place screenshot files in this folder with exact names:
 
 1) balance-quick-5perday.jpg
 2) language-selector-11.jpg
@@ -9,7 +9,7 @@ Place screenshot files in this folder with exact names:
 7) formatted-code-response.jpg
 
 These files are referenced by:
-- how-it-works.html
+- how-it-works/
 
 Suggested source images:
 - Balance panel screenshot showing "Free attempts used during this day"
@@ -19,3 +19,4 @@ Suggested source images:
 - Chat screenshot that shows direct reply + typing state before completion
 - Chat screenshot that shows improved formatted story-style response output
 - Chat screenshot that shows improved formatted code-style response output
+

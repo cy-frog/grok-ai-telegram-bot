@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <img src="assets/brand/cyberfrog-logo-latest.jpg" alt="Cyberfrog Grok Telegram Bot" width="340" />
 </p>
 
@@ -44,9 +44,9 @@ If you need more volume, switch to paid usage and spend only on actual consumpti
 
 - Bot: `https://t.me/grok_ai_telegram_bot`
 - Channel: `https://t.me/cyber_frog_ai`
-- Status: `https://cy-frog.github.io/grok-ai-telegram-bot/status.html`
-- Pricing: `https://cy-frog.github.io/grok-ai-telegram-bot/pricing.html`
-- Privacy: `https://cy-frog.github.io/grok-ai-telegram-bot/privacy.html`
+- Status: `https://cy-frog.github.io/grok-ai-telegram-bot/status/`
+- Pricing: `https://cy-frog.github.io/grok-ai-telegram-bot/pricing/`
+- Privacy: `https://cy-frog.github.io/grok-ai-telegram-bot/privacy/`
 
 ## Positioning
 
@@ -58,3 +58,4 @@ Not affiliated with xAI, Telegram, Elon Musk, or Pavel Durov.
 `grok telegram bot, grok ai telegram bot, grok 4 telegram, telegram ai bot, grok image generation telegram, grok video generation telegram, expert ai mode telegram, internet search ai telegram, pay as you go ai bot, private ai telegram bot, cyberfrog grok bot`
 
 Website: https://cy-frog.github.io/grok-ai-telegram-bot/
+

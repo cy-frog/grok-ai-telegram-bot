@@ -10,6 +10,7 @@
 8) durov-stage-photo.jpg
 
 Referenced by:
-- musk-durov-grok-telegram.html
-- ru/musk-durov-grok-telegram.html
+- musk-durov-grok-telegram/
+- ru/musk-durov-grok-telegram/
+
 
