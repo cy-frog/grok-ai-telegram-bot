@@ -482,6 +482,22 @@ th {
   box-shadow: 0 0 0 1px rgba(85, 255, 176, 0.14), 0 16px 28px rgba(0, 0, 0, 0.36);
 }
 
+.article-link-card,
+.article-link-card:visited {
+  display: block;
+  color: inherit;
+}
+
+.article-link-card:hover {
+  text-decoration: none;
+}
+
+.article-link-hint {
+  margin: 10px 0 0;
+  color: #86ffc6;
+  font-weight: 600;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
