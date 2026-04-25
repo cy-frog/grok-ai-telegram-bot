@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Как я сделал Telegram Roleplay AI Bot: выбор LLM, цензура и почему победил Grok</title>
+    <title>Как выбрать AI-бота в Telegram с минимальной цензурой</title>
     <meta
       name="description"
-      content="Личный разбор разработки Telegram Roleplay AI Bot: выбор модели, проблемы цензуры, попытки с open-source LLM, квантизация, Ollama и почему финальным решением стал Grok API."
+      content="Практический разбор, как выбрать AI-бота в Telegram с минимальной цензурой: тесты ChatGPT, open-source моделей, квантизация и финальный выбор Grok API."
     />
     <meta
       property="og:title"
-      content="Как я сделал Telegram Roleplay AI Bot: выбор LLM, цензура и почему победил Grok"
+      content="Как выбрать AI-бота в Telegram с минимальной цензурой"
     />
     <meta
       property="og:description"
-      content="История разработки Telegram Roleplay AI Bot: от идеи и подбора LLM до рабочего релиза. Что не сработало с ChatGPT и open-source моделями и почему итоговый выбор пал на Grok."
+      content="Как выбрать AI для Telegram без лишних ограничений: что не сработало в ChatGPT и open-source моделях и почему финальный выбор пал на Grok."
     />
     <meta property="og:type" content="article" />
     <meta
@@ -23,20 +23,20 @@
     />
     <meta
       property="og:image"
-      content="https://cy-frog.github.io/grok-ai-telegram-bot/assets/article%202/image3.webp"
+      content="https://cy-frog.github.io/grok-ai-telegram-bot/assets/article%202/early-grok-release-turning-point.webp"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Как я сделал Telegram Roleplay AI Bot: выбор LLM, цензура и почему победил Grok"
+      content="Как выбрать AI-бота в Telegram с минимальной цензурой"
     />
     <meta
       name="twitter:description"
-      content="Личный разбор разработки Telegram Roleplay AI Bot: выбор модели, проблемы цензуры, open-source LLM, квантизация и рабочий финал на Grok API."
+      content="Пошаговый разбор выбора AI-бота в Telegram с минимальной цензурой и причины, по которым финальным решением стал Grok API."
     />
     <meta
       name="twitter:image"
-      content="https://cy-frog.github.io/grok-ai-telegram-bot/assets/article%202/image3.webp"
+      content="https://cy-frog.github.io/grok-ai-telegram-bot/assets/article%202/early-grok-release-turning-point.webp"
     />
     <meta
       name="robots"
@@ -110,12 +110,17 @@
         >
       </nav>
 
-      <h1>Как я сделал Telegram Roleplay AI Bot: от идеи до рабочего релиза</h1>
+      <h1>Как выбрать AI-бота в Telegram с минимальной цензурой</h1>
       <p class="page-subtitle">
-        История о том, как «маленький эксперимент для чата с друзьями» превратился
-        в полноценный проект: выбор LLM, боль с цензурой, тупик с open-source
-        моделями, квантизация и финальный переход на Grok API.
+        Пошаговый разбор выбора AI для Telegram без лишних ограничений: что
+        оказалось нерабочим, а что в итоге дало стабильный результат на Grok API.
       </p>
+      <nav class="article-nav-quick" aria-label="Быстрая навигация по статьям">
+        <a class="article-nav-link" href="articles.html">Все статьи</a>
+        <a class="article-nav-link" href="musk-durov-grok-telegram.html"
+          >Предыдущая: Официальный Telegram бот Grok - почему запуск не состоялся</a
+        >
+      </nav>
 
       <section class="card story-card">
         <h2>Идея, которая быстро вышла из-под контроля</h2>
@@ -163,7 +168,7 @@
         </p>
         <figure class="story-media">
           <img
-            src="../assets/article%202/image%201.webp"
+            src="../assets/article%202/chatgpt-roleplay-refusal.webp"
             alt="Скриншот запроса к ChatGPT и ответа с отказом."
             loading="lazy"
             decoding="async"
@@ -205,7 +210,7 @@
         </p>
         <figure class="story-media">
           <img
-            src="../assets/article%202/image2.webp"
+            src="../assets/article%202/local-server-hardware-limit.webp"
             alt="Скриншот сервера, который не тянет тяжелую open-source LLM без компромиссов."
             loading="lazy"
             decoding="async"
@@ -239,7 +244,7 @@
         </p>
         <figure class="story-media">
           <img
-            src="../assets/article%202/image3.webp"
+            src="../assets/article%202/early-grok-release-turning-point.webp"
             alt="Первый релиз Grok, который стал поворотным моментом в проекте."
             loading="lazy"
             decoding="async"
@@ -277,6 +282,14 @@
           Заходите на свой страх и риск.
         </p>
       </section>
+
+      <nav class="article-pager" aria-label="Переход между статьями">
+        <a class="article-pager-link article-pager-prev" href="musk-durov-grok-telegram.html"
+          >Предыдущая статья: Официальный Telegram бот Grok - почему запуск не состоялся</a
+        >
+        <a class="article-pager-link article-pager-all" href="articles.html">Все статьи</a>
+        <span class="article-pager-spacer" aria-hidden="true"></span>
+      </nav>
     </main>
   </body>
 </html>
