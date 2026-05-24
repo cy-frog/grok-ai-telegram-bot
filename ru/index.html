@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
@@ -146,15 +146,11 @@
   <body>
     <main class="container">
       <nav class="topbar">
-        <a href="./">Главная</a>
-        <a href="articles/">Статьи</a>
+        <a href="./">Главная</a> <a href="articles/">Статьи</a>
         <a href="how-it-works/">Как это работает</a>
         <a href="status/">Статус</a>
-        <a href="pricing/">Тарифы</a>
-        <a href="privacy/">Приватность</a>
-        <a href="faq/">FAQ</a>
-        <a href="changelog/">Обновления</a>
-        <a href="../">EN</a>
+        <a href="privacy/">Приватность</a> <a href="faq/">FAQ</a>
+        <a href="changelog/">Обновления</a> <a href="about-me/">О проекте</a> <a href="../">EN</a>
         <a
           class="topbar-cta"
           href="https://t.me/cyber_frog_ai"
@@ -170,7 +166,6 @@
           >Бот</a
         >
       </nav>
-
       <section class="hero">
         <div class="hero-copy">
           <h1>Grok Telegram Bot</h1>
@@ -218,8 +213,10 @@
           />
         </div>
       </section>
-
-      <section class="section-head hero-story" aria-labelledby="hero-story-title">
+      <section
+        class="section-head hero-story"
+        aria-labelledby="hero-story-title"
+      >
         <h2 id="hero-story-title">Почему существует этот бот</h2>
         <p>
           Мы сделали то, о чем Павел Дуров и Илон Маск говорили, но так и не
@@ -227,7 +224,6 @@
           отвечает естественно и говорит без фильтров.
         </p>
       </section>
-
       <section class="grid feature-grid">
         <article class="card">
           <h2>Что вы получаете</h2>
@@ -240,7 +236,9 @@
             <li>Без платной ежемесячной подписки.</li>
             <li>Режим Internet для ответов с актуальным контекстом.</li>
             <li>Бесплатные запросы с ежедневным обновлением лимита.</li>
-            <li>Память контекста, чтобы ответы оставались последовательными.</li>
+            <li>
+              Память контекста, чтобы ответы оставались последовательными.
+            </li>
           </ul>
         </article>
         <article class="card">
@@ -253,7 +251,6 @@
           </ol>
         </article>
       </section>
-
       <section class="section-head">
         <h2>Как это выглядит</h2>
         <p>
@@ -361,53 +358,27 @@
           Вперёд
         </button>
       </section>
-
-      <section class="card panel">
-        <h2>Полезные ссылки</h2>
-        <div class="btn-row">
-          <a
-            class="btn"
-            href="https://t.me/grok_ai_telegram_bot"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Открыть бота</a
-          >
-          <a
-            class="btn"
-            href="https://t.me/cyber_frog_ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Открыть канал</a
-          >
-          <a class="btn" href="status/">Текущий статус</a>
-          <a class="btn" href="pricing/">Тарифы</a>
-          <a class="btn" href="privacy/">Приватность</a>
+      <section class="card panel home-articles">
+        <h2>Читайте полные истории</h2>
+        <div class="home-articles-grid">
+          <a class="home-article-tile" href="how-i-built-roleplay-ai-telegram-bot/">
+            <h3>Как я выбрал AI с минимальной цензурой</h3>
+            <p>
+              Почему мне был нужен более свободный стиль ответов,
+              какие решения не подошли, и почему финальный выбор пал на Grok.
+            </p>
+            <span class="home-article-hint">Читать статью</span>
+          </a>
+          <a class="home-article-tile" href="musk-durov-grok-telegram/">
+            <h3>Почему официальный запуск Grok в Telegram провалился</h3>
+            <p>
+              Полная хронология анонса, конфликта и причин,
+              почему официальный бот до сих пор не работает.
+            </p>
+            <span class="home-article-hint">Читать статью</span>
+          </a>
         </div>
       </section>
-
-      <section class="card panel">
-        <h2>Почитать подробнее</h2>
-        <ul>
-          <li>
-            Я хотел сделать AI-бота в Telegram без лишних ограничений и с
-            предсказуемыми ответами. Поэтому в итоге остановился на Grok.
-            Подробный разбор:
-            <a href="how-i-built-roleplay-ai-telegram-bot/"
-              >как выбрать AI-бота в Telegram с минимальной цензурой</a
-            >.
-          </li>
-          <li>
-            Долго натыкался на ответы и посты, где писали, что есть официальный
-            рабочий Grok-бот в Telegram. На практике официальный бот вообще не
-            работает. Подробная история, почему его анонсировали, но он не
-            работает:
-            <a href="musk-durov-grok-telegram/"
-              >читайте здесь</a
-            >.
-          </li>
-        </ul>
-      </section>
-
       <p class="footer">
         Сайт проекта:
         <a
@@ -418,11 +389,10 @@
         >
       </p>
       <p class="footer-note">
-        Это независимый проект и он не связан с xAI, Telegram, Илоном Маском
-        или Павлом Дуровым.
+        Это независимый проект и он не связан с xAI, Telegram, Илоном Маском или
+        Павлом Дуровым.
       </p>
     </main>
-
     <a
       class="mobile-subscribe-cta"
       href="https://t.me/grok_ai_telegram_bot"
@@ -437,7 +407,6 @@
         const prev = document.querySelector(".carousel-btn-prev");
         const next = document.querySelector(".carousel-btn-next");
         if (!viewport || !track || !prev || !next) return;
-
         const step = () =>
           Math.max(320, Math.round(viewport.clientWidth * 0.74));
         const update = () => {
@@ -445,7 +414,6 @@
           prev.disabled = track.scrollLeft <= 2;
           next.disabled = track.scrollLeft >= maxLeft;
         };
-
         prev.addEventListener("click", function () {
           track.scrollBy({ left: -step(), behavior: "smooth" });
         });
@@ -459,6 +427,3 @@
     </script>
   </body>
 </html>
-
-
-
